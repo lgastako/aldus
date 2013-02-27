@@ -4,18 +4,18 @@
 name:                aldus
 version:             0.1.0.0
 synopsis:            Static template publisher (cf. static website generator).
--- description:         
+-- description:
 homepage:            https://github.com/lgastako/aldus
 license:             MIT
 license-file:        LICENSE
 author:              John Evans
 maintainer:          lgastako@gmail.com
--- copyright:           
+-- copyright:
 category:            Text
 build-type:          Simple
 cabal-version:       >=1.8
 
 executable aldus
-  -- main-is:             
-  -- other-modules:       
+  -- main-is:
+  -- other-modules:
   build-depends:       base ==4.5.*
