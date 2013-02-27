@@ -1,0 +1,7 @@
+*.hi
+*.o
+Aldus/Main
+bin
+Tests
+Tests.tix
+.hpc
