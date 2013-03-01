@@ -1,34 +1,46 @@
 GHC=ghc
 GHCOPTS=-Wall
+CABAL=cabal-dev
 
 all:
-	@echo "c:clean"
+	@echo "c:lean"
+	@echo "cfg: configure"
 	@echo "b:uild"
+	@echo "i:install"
 	@echo "t:est"
+	@echo "f:ull = clean + configure + build + install + test"
+	@echo "g:hci"
+	@echo ""
 
 clean:
-	\rm -rf bin *.o *.hi Tests.tix Tests Aldus/*.o Aldus/*.hi Aldus/Main
+	$(CABAL) clean
 
-bin:
-	mkdir bin
+configure:
+	$(CABAL) configure --enable-tests
 
-Aldus/Main: Aldus/Main.hs
-	$(GHC) $(GHCOPTS) --make Aldus/Main.hs
+build:
+	$(CABAL) build
 
-bin/aldus: bin Aldus/Main
-	cp Aldus/Main bin/aldus
+install:
+	$(CABAL) install
 
-build: bin/aldus
+test:
+	$(CABAL) test
 
-Tests: Tests.hs
-	$(GHC) $(GHCOPTS) -fhpc --make Tests
+ghci:
+	# If you are not using cabal-dev, remove the $(CABAL).
+	$(CABAL) ghci
 
-test: aldus Tests
-	./Tests
+full: clean configure build install test
 
 # aliases
 a: all
+
 c: clean
+cfg: configure
 b: build
 t: test
+i: install
+f: full
+g: ghci
 

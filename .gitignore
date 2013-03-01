@@ -5,3 +5,5 @@ bin
 Tests
 Tests.tix
 .hpc
+dist
+cabal-dev

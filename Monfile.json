@@ -1,0 +1,5 @@
+{
+    "rules": {
+        "**/*.hs": "cabal-dev install"
+    }
+}

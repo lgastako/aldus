@@ -1,10 +1,15 @@
-module Aldus.Config(AldusConfig, defaultConfig, altConfig, inputDirectory, outputDirectory) where
+module Aldus.Config(AldusConfig,
+                    defaultConfig,
+                    altConfig,
+                    inputDirectory,
+                    outputDirectory) where
 
 import Text.JSON(decodeStrict,
                  Result(Ok,
                         Error),
                  valFromObj)
-import System.FilePath.Posix(joinPath)
+--import System.FilePath.Posix(joinPath)
+import System.FilePath(joinPath)
 
 
 data AldusConfig = AldusConfig { inputDirectory :: FilePath

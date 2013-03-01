@@ -1,5 +1,6 @@
 module Aldus.Core where
 
+import Control.Monad
 import System.FilePath(joinPath,makeRelative,pathSeparator)
 import Data.List(stripPrefix)
 import Data.Maybe(fromJust)
@@ -40,13 +41,13 @@ publishFile srcDir dstDir srcFile = do
     return ()
 
 
---publishDir :: AldusConfig -> IO Integer
---publishDir cfg = do
-    --srcDir <- inputDirectory cfg
-    --dstDir <- outputDirectory cfg
-    --let pub = publishFile srcDir dstDir
-        --numFiles = parwalk srcDir pub
-        --in return numFiles
+publishDir :: AldusConfig -> IO Integer
+publishDir cfg = do
+    let srcDir = inputDirectory cfg
+    let dstDir = outputDirectory cfg
+    let pub path contents = publishFile srcDir dstDir path
+    numFiles <- parwalk srcDir pub
+    return numFiles
 
 -- parwalk needs to walk every file in srcDir and emit pairs of
 -- (filename, fileContents) to publishFile
