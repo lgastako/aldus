@@ -1,0 +1,215 @@
+jekyll - O.G.
+    language: ruby
+    license: MIT
+    author: Tom Preston-Werner (of github, jekyll powers static pages at github)
+
+    ?generates rss/atom
+
+    +syntax highlighting (via pygments... huh...)
+    +github webhooks
+    +plugins
+    +auto-regeneration on changed files for live editing
+    +local server
+    +pagination
+    +markdown
+
+    -(?) config is yaml
+    -only markdown(?)
+        + provides 4(!) markdown engines:
+            + Maruku
+            + rdiscount
+            + kramdown
+            + redcarpet
+
+    - requires a specific directory structure
+    - ordering can only be chrono or reverse chrono due to date being
+      hardcoded in the file.
+    - categories limited and fake hierarchical
+    - pages and posts treated differently
+      - why?
+    - requires use of liquid templating language which they admit is
+      not programmer friendly.
+    - meta data must be in same file.
+
+    install: sudo gem install jekyll
+
+    https://github.com/mojombo/jekyll
+    http://jekyllbootstrap.com/lessons/jekyll-introduction.html
+
+
+blogofile
+    language: python
+    license: MIT
+    author(s): Ryan McGuire -> Doug Latornell + Community
+
+    +syntax highlighting
+    +generates rss/atom
+
+    * mako templates
+
+    install: sudo easy_install Blogofile
+        (or, obv...)
+    install: sudo pip install Blogofile
+
+    http://www.blogofile.com/
+
+
+Bonsai
+    language: ruby
+    license: ?
+
+    +mustache
+    +less
+    +sass
+    +simple
+    +tilt (https://github.com/rtomayko/tilt multitemplates)
+
+    http://tinytree.info/
+    http://tinytree.info/getting-started/
+
+
+Middleman
+    language: ruby
+    license: MITish
+
+    +middleman init -> scaffold
+    +SASS
+    +CoffeeScript
+    +Multiple asset managers
+    +ERb
+    +Haml
+
+    "Middleman is a static site generator using all the shortcuts and tools in
+     modern web development. Getting started."
+
+
+Hyde - python port of jekyll
+    language: python
+    license: MIT
+
+    +syntax via pygments
+    +YUI Compressor
+    +Closure Compiler
+    +Uglify JS
+    +Clever CSS
+    +HSS(?)
+    +SASS
+    +LessCSS
+    +Stylus(?)
+    +CSSPrefixer
+    +CSSmin
+    +JSmin
+    +Thumbnail
+
+    +Markdown
+    +Textile
+    +reST
+    +asciidoc
+
+    https://github.com/lakshmivyas/hyde
+    https://github.com/blog/342-hyde-the-python-static-site-generator
+
+
+http://webby.rubyforge.org/
+    ruby
+    +ERB, Texttile, Markdown, HAML, SASS
+    +syntax via UltraViolet and coderay
+    +DOT via graphviz
+    +LaTeX
+    +clean content via tidy
+    +only builds pages that have changed
+    rake
+    +autobuild
+
+
+http://octopress.org/
+    blogging engine on top of jekyll
+
+
+http://sphinx-doc.org/
+    python
+    multiple output formats from same input, html, latex, pdf, etc
+
+
+https://github.com/koenbok/Cactus
+    python + django templates
+
+
+https://github.com/aconbere/igor
+    python
+
+
+Frozen Flask
+    http://pythonhosted.org/Frozen-Flask/
+    http://pythonhosted.org/Flask-FlatPages/
+    https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/
+
+
+http://pelican.readthedocs.org/en/3.1.1/
+    python
+
+    reStructuredText, Markdown, or AsciiDoc
+    +syntax highlighting
+    +comments via disqus
+    +themes via jinja2 templates
+    +atom/rss feeds
+    +pdf gen
+    +asset management via webassets
+    +pagination
+    +plugins
+    +publish to github
+
+
+https://github.com/stef/utterson
+    shell scripts (ksh and whatnot... ugh)
+
+
+
+https://github.com/jaspervdj/Hakyll
+    haskell
+
+
+https://github.com/norman/grackle
+    lua
+
+
+webgen
+    language: ruby
+    license: GPL
+
+    http://webgen.rubyforge.org/
+
+
+staticmatic
+    language: ruby
+    license:
+    http://staticmatic.rubyforge.org/
+
+nanoc
+    language: ruby
+    license:
+    http://nanoc.ws/
+
+aym-cms - Hyde was forked from this
+    https://github.com/lethain/aym-cms
+
+
+Second Crack
+    language: PHP (nope!)
+    license: ? open
+
+    +inotify
+    +markdown
+
+    -only markdown
+
+    https://github.com/marcoarment/secondcrack
+
+
+Pie Crust
+    language: PHP (nope!)
+    http://bolt80.com/piecrust/
+
+
+many more:
+    http://bolt80.com/piecrust/doc/alternatives/

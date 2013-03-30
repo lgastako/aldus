@@ -1,0 +1,39 @@
+- Scaffolds via same publishing mechanism.
+  - Therefore it should be easy to say "apply this external meta data
+    to this directory structure to render this new (mirrored, published)
+    directory structure."
+
+- "open" command
+- wsywig editor via ACE or similar and serve with code for editing files
+  locally.
+
+- tags
+
+- archive generation
+
+- pagination
+
+
+- super UX + marketing features:
+
+- awesome docs, dogfooded of course.
+
+- auto integration / publish to heroku
+    ala http://cloudhead.io/toto
+
+- ability to automatically add a bunch of different css, js, etc frameworks
+  like e.g. bootstrap, jquery, ember, backbone, etc.
+
+- ability to suck existing posts out of existing blogs
+    stage 1: know certain popular blogs like wordpress specifically
+    stage 2: automagically... muahahaha.
+
+- search of static site by embedding index in javascript in a search page?
+    - how does the search work in Sphinx generated sites?
+
+- built in server for dev mode with autogen mode
+
+- i18n
+
+
+
