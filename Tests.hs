@@ -8,6 +8,9 @@ import Test.Framework.Providers.QuickCheck2 (testProperty)
 import Aldus.Core(mkrel,destPath)
 
 
+-- ** helpers ** --
+
+-- | An infinite string of slashes to take from below.
 slashes :: String
 slashes = '/' : slashes
 
@@ -15,10 +18,12 @@ slashes = '/' : slashes
 
 -- ** mkrel ** --
 
-prop_mkrel_drops_prefix :: [Char] -> Property
-prop_mkrel_drops_prefix s = length s > 0 && (head s) /= '/' && (head s) /= '.' ==>
-    mkrel "/foo" ("/foo/" ++ s) == s
-
+-- For any relative path (that is a non-zero length strength that doesn't start
+-- with slash or dot), mkrel with a dir of "/foo" should return "/foo/" + that
+-- path.
+prop_mkrel_drops_prefix :: String -> Property
+prop_mkrel_drops_prefix s = isRelPath s ==> mkrel "/foo" ("/foo/" ++ s) == s
+    where isRelPath p = length p > 0 && (head p) /= '/' && (head p) /= '.'
 
 -- ** destPath ** --
 
