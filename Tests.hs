@@ -70,11 +70,16 @@ quickcheckTests = map f rawQCTests
 
 -- ** begin hunit tests ** --
 
-test_mkrelBasics = testCase "mkrel simple" $
+test_mkrelBasics :: Test
+test_mkrelBasics = testCase "mkrel basics" $ do
     assertEqual "mkrel /home /home/bob -> bob"
         (mkrel "/home" "/home/bob")
         "bob"
+    assertEqual "mkrel /home /home/dave -> dave"
+        (mkrel "/home" "/home/dave")
+        "dave"
 
+test_mkrelSrcIsDst :: Test
 test_mkrelSrcIsDst = testCase "mkrel src is dst" $
     assertEqual "mkrel /home /home/bob -> bob"
         (mkrel "/home" "/home")
@@ -84,8 +89,8 @@ test_mkrelSrcIsDst = testCase "mkrel src is dst" $
 
 unitTests :: [Test]
 unitTests = [ test_mkrelBasics
-             , test_mkrelSrcIsDst
-             ]
+            , test_mkrelSrcIsDst
+            ]
 
 -- ** end hunit tests ** --
 
