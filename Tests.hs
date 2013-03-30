@@ -40,11 +40,12 @@ prop_destPath_handles_src_equiv :: Int -> Bool
 prop_destPath_handles_src_equiv n = destPath "/src" "/dst" ("/src" ++ s) == "/dst"
     where s = take n slashes
 
+prop_destPath_drops_trailing_slash :: String -> Bool
 prop_destPath_drops_trailing_slash s = destPath "/src" "/dst" ("/src/" ++ s ++ "/") == "/dst/" ++ s
 
 -- ** end tests ** --
 
---tests :: [(String, ([Char] -> Property))]
+tests :: [(String, String -> Property)]
 tests = [ ( "mkrel drops prefix"          , prop_mkrel_drops_prefix)
         , ( "destPath drops double slash" , prop_destPath_drops_double_slash)
         --, ( "destPath moves"              , prop_destPath_moves)

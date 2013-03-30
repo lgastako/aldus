@@ -1,9 +1,6 @@
 module Aldus.Core where
 
-import Control.Monad
 import System.FilePath(joinPath,makeRelative,pathSeparator)
-import Data.List(stripPrefix)
-import Data.Maybe(fromJust)
 import Aldus.Config
 import Aldus.Util(parwalk)
 
@@ -18,7 +15,7 @@ mkrel dir fn
 
 
 destPath :: FilePath -> FilePath -> FilePath -> FilePath
-destPath srcDir dstDir "" = dstDir
+destPath _ dstDir "" = dstDir
 destPath srcDir dstDir srcFile
     | srcFile == srcDir ++ [pathSeparator] = dstDir ++ [pathSeparator]
     | otherwise                            = joinPath [dstDir, fn]
@@ -35,7 +32,7 @@ publish inPath f outPath = do
 
 publishFile :: FilePath -> FilePath -> FilePath -> IO ()
 publishFile srcDir dstDir srcFile = do
-    let dstPath = destPath srcDir dstDir srcFile
+    let _dstPath = destPath srcDir dstDir srcFile
     return ()
 
 
@@ -43,7 +40,7 @@ publishDir :: AldusConfig -> IO Integer
 publishDir cfg = do
     let srcDir = inputDirectory cfg
     let dstDir = outputDirectory cfg
-    let pub path contents = publishFile srcDir dstDir path
+    let pub path _contents = publishFile srcDir dstDir path
     numFiles <- parwalk srcDir pub
     return numFiles
 
