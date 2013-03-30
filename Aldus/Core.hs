@@ -10,14 +10,12 @@ import Aldus.Util(parwalk)
 
 -- fixes makeRelative to give it the behavior I want.
 mkrel :: FilePath -> FilePath -> FilePath
-mkrel dir fn = let path = makeRelative dir fn in
-    if path == joinPath [dir, "."] then
-        ""
-    else
-        if path == "." then
-            ""
-        else
-            path
+mkrel dir fn
+    | path == joinPath [dir, "."] = ""
+    | path == "."                 = ""
+    | otherwise                   = path
+    where path = makeRelative dir fn
+
 
 destPath :: FilePath -> FilePath -> FilePath -> FilePath
 destPath srcDir dstDir "" = dstDir
