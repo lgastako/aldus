@@ -1,8 +1,9 @@
 module Main(main) where
 
 import Aldus.Config(defaultConfig,altConfig)
-import Aldus.Core(publishDir)
+import Aldus.Core(publishConfig)
 import System.Environment(getArgs)
+
 
 main :: IO ()
 main = do
@@ -11,6 +12,5 @@ main = do
         [dir] -> defaultConfig dir
         ["--config", configFilename, dir] -> altConfig dir configFilename
         _ -> error "Usage: aldus [--config filename] topDir"
-    numFiles <- publishDir config
+    numFiles <- publishConfig config
     putStrLn ("Published " ++ (show numFiles) ++ " files.")
-
