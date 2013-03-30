@@ -30,9 +30,11 @@ test-suite test-aldus
                    , QuickCheck                   ==2.5.1.1
                    , test-framework               ==0.8
                    , test-framework-quickcheck2   ==0.3.0.1
+                   , test-framework-hunit         ==0.3.0
                    , json                         ==0.7
                    , MissingH                     ==1.2.0.0
                    , filepath                     ==1.3.0.0
+                   , HUnit                        ==1.2.5.1
     ghc-options:     -Wall -fno-warn-orphans
 
 
@@ -44,9 +46,11 @@ executable aldus
                    , QuickCheck                   ==2.5.1.1
                    , test-framework               ==0.8
                    , test-framework-quickcheck2   ==0.3.0.1
+                   , test-framework-hunit         ==0.3.0
                    -- End For now
                    , filepath                     ==1.3.*
                    , json                         ==0.7
                    , MissingH                     ==1.2.0.0
                    , filepath                     ==1.3.0.0
+                   , HUnit                        ==1.2.5.1
     ghc-options:     -Wall -fno-warn-orphans
