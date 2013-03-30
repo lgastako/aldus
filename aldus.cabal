@@ -3,8 +3,8 @@
 
 name:                aldus
 version:             0.1.0.0
-synopsis:            Static template publisher (cf. static website generator).
--- description:
+synopsis:            Static content publisher (cf. static website generator).
+description:         A simple static content publisher.
 homepage:            https://github.com/lgastako/aldus
 license:             MIT
 license-file:        LICENSE
