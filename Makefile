@@ -1,5 +1,3 @@
-GHC=ghc
-GHCOPTS=-Wall
 CABAL=cabal-dev
 
 all:
