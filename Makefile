@@ -23,7 +23,8 @@ install:
 	$(CABAL) install
 
 test:
-	$(CABAL) test
+	@# $(CABAL) test
+	dist/build/test-aldus/test-aldus
 
 ghci:
 	# If you are not using cabal-dev, remove the $(CABAL).
