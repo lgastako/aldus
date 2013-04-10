@@ -34,9 +34,8 @@ install-deps:
 	$(CABAL) install --only-dependencies --enable-tests
 
 test:
-	#@$(CABAL) test
-	dist/build/test-aldus/test-aldus
-	#dist/build/tests/tests
+	@#$(CABAL) test
+	dist/build/tests/tests
 
 dist:
 	$(CABAL) sdist

@@ -20,7 +20,7 @@ source-repository head
     location:        https://github.com/lgastako/aldus
 
 test-suite tests
-    hs-source-dirs:  src test
+    hs-source-dirs:  src tests
 --    type:            detailed-0.9
 --    test-module:     Tests
     type:            exitcode-stdio-1.0
